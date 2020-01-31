@@ -1,26 +1,33 @@
-import 'package:flame/util.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:developer_romantan/Views/mainMenu.dart';
-import 'dart:async';
+import 'package:flutter/widgets.dart';
+import 'package:flame/util.dart';
 
+import 'package:developer_romantan/Views/mainMenu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter/widgets.dart';
 import 'haunt-game.dart';
-
-//TODO Keep screen active -> no sleep
+import 'neumorphic.dart';
 
 SharedPreferences sharedPrefs;
 
-bool isNinjaGame = true;
+enum ViewType {
+  Ninja,
+  Mazzball,
+  Neumorphic,
+}
 
 void main() async {
-  if (isNinjaGame == true) {
-    setupNinja();
-  } else {
-    setupMazzBall();
-  }
+  const ViewType viewType = ViewType.Neumorphic;
+
+  const Map<ViewType, Function> _funMap = {
+    ViewType.Ninja: setupNinja,
+    ViewType.Mazzball: setupMazzBall,
+    ViewType.Neumorphic: setupNeumorphic,
+  };
+
+  _funMap[viewType]();
 }
 
 void setupNinja() {
@@ -32,6 +39,11 @@ void setupMazzBall() async {
   //Make sure flame is ready before we launch our game
   await setupFlame();
   runApp(App());
+}
+
+void setupNeumorphic() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(Neumorphic());
 }
 
 /// Setup all Flame specific parts
