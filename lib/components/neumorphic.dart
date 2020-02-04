@@ -6,6 +6,71 @@ enum CurveType {
   none,
 }
 
+class NeumorOption {
+  double height;
+  double width;
+  Color color;
+  Color parentColor;
+  Color surfaceColor;
+  double spread;
+  Widget child;
+  double borderRadius;
+  BorderRadius customBorderRadius;
+  CurveType curveType;
+  int depth;
+  bool emboss;
+  bool gesture;
+  Function onTapUp;
+  Function onTapDown;
+
+  NeumorOption({
+    this.child,
+    this.height,
+    this.width,
+    this.color,
+    this.surfaceColor,
+    this.parentColor,
+    this.spread,
+    this.borderRadius,
+    this.customBorderRadius,
+    this.curveType,
+    this.depth,
+    this.emboss,
+    this.gesture,
+    this.onTapUp,
+    this.onTapDown,
+  });
+
+  factory NeumorOption.build(NeumorOption option) {
+    return option == null ? NeumorOption() : option;
+  }
+
+  buildContainer() {
+    return NeumorphicContainer(this);
+  }
+
+  @override
+  String toString() {
+    return '''{
+    child: ${this.child},
+    height: ${this.height},
+    width: ${this.width},
+    color: ${this.color},
+    surfaceColor: ${this.surfaceColor},
+    parentColor: ${this.parentColor},
+    spread: ${this.spread},
+    borderRadius: ${this.borderRadius},
+    customBorderRadius: ${this.customBorderRadius},
+    curveType: ${this.curveType},
+    depth: ${this.depth},
+    emboss: ${this.emboss},
+    gesture: ${this.gesture},
+    onTapUp: ${this.onTapUp},
+    onTapDown: ${this.onTapDown},
+    }''';
+  }
+}
+
 class NeumorphicContainer extends StatefulWidget {
   final NeumorOption option;
 
@@ -215,70 +280,5 @@ class NeumorConfig {
       _getAdjustColor(baseColor, depth),
       _getAdjustColor(baseColor, 0 - depth),
     ];
-  }
-}
-
-class NeumorOption {
-  double height;
-  double width;
-  Color color;
-  Color parentColor;
-  Color surfaceColor;
-  double spread;
-  Widget child;
-  double borderRadius;
-  BorderRadius customBorderRadius;
-  CurveType curveType;
-  int depth;
-  bool emboss;
-  bool gesture;
-  Function onTapUp;
-  Function onTapDown;
-
-  NeumorOption({
-    this.child,
-    this.height,
-    this.width,
-    this.color,
-    this.surfaceColor,
-    this.parentColor,
-    this.spread,
-    this.borderRadius,
-    this.customBorderRadius,
-    this.curveType,
-    this.depth,
-    this.emboss,
-    this.gesture,
-    this.onTapUp,
-    this.onTapDown,
-  });
-
-  factory NeumorOption.build(NeumorOption option) {
-    return option == null ? NeumorOption() : option;
-  }
-
-  buildContainer() {
-    return NeumorphicContainer(this);
-  }
-
-  @override
-  String toString() {
-    return '''{
-    child: ${this.child},
-    height: ${this.height},
-    width: ${this.width},
-    color: ${this.color},
-    surfaceColor: ${this.surfaceColor},
-    parentColor: ${this.parentColor},
-    spread: ${this.spread},
-    borderRadius: ${this.borderRadius},
-    customBorderRadius: ${this.customBorderRadius},
-    curveType: ${this.curveType},
-    depth: ${this.depth},
-    emboss: ${this.emboss},
-    gesture: ${this.gesture},
-    onTapUp: ${this.onTapUp},
-    onTapDown: ${this.onTapDown},
-    }''';
   }
 }

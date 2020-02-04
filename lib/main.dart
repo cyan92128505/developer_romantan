@@ -7,8 +7,8 @@ import 'package:flame/util.dart';
 import 'package:developer_romantan/Views/mainMenu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'haunt-game.dart';
-import 'neumorphic.dart';
+import 'haunt_game.dart';
+import 'neumorphic_view.dart';
 
 SharedPreferences sharedPrefs;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/neumorphic_container.dart';
+import 'components/neumorphic.dart';
 
 class Neumorphic extends StatelessWidget {
   Widget build(BuildContext context) {
