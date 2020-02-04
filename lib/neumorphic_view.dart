@@ -12,22 +12,25 @@ class Neumorphic extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(64),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               NeumorOption(
                 color: baseColor,
-                height: 64,
-                width: 64,
-                borderRadius: 64,
-                emboss: false,
                 gesture: true,
+                borderRadius: 64,
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Hello World',
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                ),
               ).buildContainer(),
               NeumorOption(
                   color: baseColor,
                   height: 64,
                   width: 64,
                   borderRadius: 64,
-                  emboss: false,
                   gesture: true,
                   onTapDown: () {
                     print('onTapDown');
