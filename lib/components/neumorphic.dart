@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-enum CurveType {
-  concave,
-  convex,
-  none,
-}
+enum CurveType { concave, convex, none }
+
+enum RGBColor { red, green, blue }
 
 class NeumorOption {
+  EdgeInsets margin;
   double height;
   double width;
   Color color;
@@ -25,6 +24,7 @@ class NeumorOption {
 
   NeumorOption({
     this.child,
+    this.margin,
     this.height,
     this.width,
     this.color,
@@ -89,6 +89,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
   @override
   Widget build(BuildContext context) {
     Widget _container = Container(
+      margin: config.margin,
       height: config.heightValue,
       width: config.widthValue,
       child: this.widget.option.child,
@@ -132,6 +133,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
 const Color neumorColor = Color(0xFFf0f0f0);
 
 class NeumorConfig {
+  EdgeInsets margin;
   double heightValue;
   double widthValue;
   int depthValue = 20;
@@ -146,6 +148,7 @@ class NeumorConfig {
   List<Color> gradientColors;
 
   NeumorConfig({
+    this.margin,
     this.heightValue,
     this.widthValue,
     this.depthValue,
@@ -167,8 +170,6 @@ class NeumorConfig {
     _config.detectEmbossValue(_option);
     _config.generatorGradientColors();
 
-    print(_config);
-
     return _config;
   }
 
@@ -181,6 +182,7 @@ class NeumorConfig {
   }
 
   prepareProperty(NeumorOption _option) {
+    this.margin = _option.margin == null ? EdgeInsets.all(6) : _option.margin;
     this.heightValue = _option.height == null ? null : _option.height;
     this.widthValue = _option.width == null ? null : _option.width;
     this.depthValue = _option.depth == null ? 20 : _option.depth;
@@ -248,17 +250,20 @@ class NeumorConfig {
   }
 
   Color _getAdjustColor(Color baseColor, amount) {
-    Map colors = {
-      "red": baseColor.red,
-      "green": baseColor.green,
-      "blue": baseColor.blue
+    Map<RGBColor, int> colors = {
+      RGBColor.red: baseColor.red,
+      RGBColor.green: baseColor.green,
+      RGBColor.blue: baseColor.blue
     };
+
     colors = colors.map((key, value) {
       if (value + amount < 0) return MapEntry(key, 0);
       if (value + amount > 255) return MapEntry(key, 255);
       return MapEntry(key, value + amount);
     });
-    return Color.fromRGBO(colors["red"], colors["green"], colors["blue"], 1);
+
+    return Color.fromRGBO(
+        colors[RGBColor.red], colors[RGBColor.green], colors[RGBColor.blue], 1);
   }
 
   List<Color> _getFlatGradients(Color baseColor, int depth) {
