@@ -19,6 +19,7 @@ class NeumorOption {
   int depth;
   bool emboss;
   bool gesture;
+  Function onTap;
   Function onTapUp;
   Function onTapDown;
 
@@ -37,6 +38,7 @@ class NeumorOption {
     this.depth,
     this.emboss,
     this.gesture,
+    this.onTap,
     this.onTapUp,
     this.onTapDown,
   });
@@ -65,6 +67,7 @@ class NeumorOption {
     depth: ${this.depth},
     emboss: ${this.emboss},
     gesture: ${this.gesture},
+    onTap: ${this.onTap},
     onTapUp: ${this.onTapUp},
     onTapDown: ${this.onTapDown},
     }''';
@@ -104,9 +107,14 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
       ),
     );
 
-    if (this.widget.option.gesture) {
+    if (this.widget.option.gesture == true) {
       _container = GestureDetector(
         child: _container,
+        onTap: () {
+          if (this.widget.option.onTap is Function) {
+            this.widget.option.onTap();
+          }
+        },
         onTapDown: (_) {
           this.widget.option.emboss = true;
           if (this.widget.option.onTapDown is Function) {
