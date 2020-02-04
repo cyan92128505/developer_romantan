@@ -1,4 +1,4 @@
-import 'package:developer_romantan/Views/base/baseView.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
 
 class ViewSwitchMessage {
   GameView upcommingView;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/neumorphic.dart';
+import 'package:developer_romantan/components/neumorphic.dart';
 
 class Neumorphic extends StatefulWidget {
   @override

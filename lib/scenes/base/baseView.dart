@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:developer_romantan/Views/base/viewSwtichMessage.dart';
-import 'package:developer_romantan/Views/viewManager.dart';
+import 'package:developer_romantan/scenes/base/viewSwtichMessage.dart';
+import 'package:developer_romantan/scenes/viewManager.dart';
 
 enum GameView {
   MainMenuBackground,

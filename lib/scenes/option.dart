@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:developer_romantan/Views/base/baseView.dart';
-import 'package:developer_romantan/Views/base/viewSwtichMessage.dart';
-import 'package:developer_romantan/Views/optionBackground.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
+import 'package:developer_romantan/scenes/base/viewSwtichMessage.dart';
+import 'package:developer_romantan/scenes/optionBackground.dart';
 import 'package:developer_romantan/game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

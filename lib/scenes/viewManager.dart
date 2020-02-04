@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:developer_romantan/Views/base/baseView.dart';
-import 'package:developer_romantan/Views/mainMenuBackground.dart';
-import 'package:developer_romantan/Views/optionBackground.dart';
-import 'package:developer_romantan/Views/playingView.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
+import 'package:developer_romantan/scenes/mainMenuBackground.dart';
+import 'package:developer_romantan/scenes/optionBackground.dart';
+import 'package:developer_romantan/scenes/playingView.dart';
 import 'package:developer_romantan/game.dart';
 import 'base/viewSwtichMessage.dart';
 

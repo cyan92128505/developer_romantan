@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:developer_romantan/Elements/mazeBuilder.dart';
-import 'package:developer_romantan/Views/base/baseView.dart';
-import 'package:developer_romantan/Views/base/viewSwtichMessage.dart';
-import 'package:developer_romantan/Views/viewManager.dart';
+import 'package:developer_romantan/components/mazeBuilder.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
+import 'package:developer_romantan/scenes/base/viewSwtichMessage.dart';
+import 'package:developer_romantan/scenes/viewManager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';

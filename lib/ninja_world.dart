@@ -4,8 +4,8 @@ import 'package:flame/box2d/box2d_component.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/painting.dart';
 
-import 'characters/ninja.dart';
-import 'levels/demo.dart';
+import 'package:developer_romantan/components/ninja.dart';
+import 'package:developer_romantan/scenes/demo.dart';
 
 class NinjaWorld extends Box2DComponent {
   NinjaComponent ninja;

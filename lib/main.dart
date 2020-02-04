@@ -4,11 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flame/util.dart';
 
-import 'package:developer_romantan/Views/mainMenu.dart';
+import 'package:developer_romantan/scenes/mainMenu.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'haunt_game.dart';
-import 'neumorphic_view.dart';
+import 'package:developer_romantan/haunt_game.dart';
+import 'package:developer_romantan/neumorphic_view.dart';
 
 SharedPreferences sharedPrefs;
 

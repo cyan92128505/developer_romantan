@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:developer_romantan/Views/aboutDialog.dart';
-import 'package:developer_romantan/Views/base/baseView.dart';
-import 'package:developer_romantan/Views/option.dart';
+import 'package:developer_romantan/scenes/aboutDialog.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
+import 'package:developer_romantan/scenes/option.dart';
 import 'package:developer_romantan/game.dart';
 
 class StartScreen extends StatefulWidget {

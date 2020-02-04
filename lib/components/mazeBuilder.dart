@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:box2d_flame/box2d.dart' as box2d;
-import 'package:developer_romantan/Elements/wall.dart';
+import 'package:developer_romantan/components/wall.dart';
 import 'package:developer_romantan/game.dart';
 import 'package:theseus/theseus.dart';
 

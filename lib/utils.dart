@@ -19,4 +19,3 @@ class ImagesLoader {
 
   get(String key) => images[key];
 }
-

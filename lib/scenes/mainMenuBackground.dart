@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:box2d_flame/box2d.dart';
-import 'package:developer_romantan/Elements/ball.dart';
-import 'package:developer_romantan/Elements/wall.dart';
-import 'package:developer_romantan/Views/base/viewSwtichMessage.dart';
-import 'package:developer_romantan/Views/viewManager.dart';
+import 'package:developer_romantan/components/ball.dart';
+import 'package:developer_romantan/components/wall.dart';
+import 'package:developer_romantan/scenes/base/viewSwtichMessage.dart';
+import 'package:developer_romantan/scenes/viewManager.dart';
 import 'package:developer_romantan/helper.dart';
 
 import 'base/baseView.dart';

@@ -4,9 +4,9 @@ import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:developer_romantan/Views/base/baseView.dart';
-import 'package:developer_romantan/Views/base/viewSwtichMessage.dart';
-import 'package:developer_romantan/Views/viewManager.dart';
+import 'package:developer_romantan/scenes/base/baseView.dart';
+import 'package:developer_romantan/scenes/base/viewSwtichMessage.dart';
+import 'package:developer_romantan/scenes/viewManager.dart';
 import 'package:wakelock/wakelock.dart';
 
 class GameWidget extends StatefulWidget {
