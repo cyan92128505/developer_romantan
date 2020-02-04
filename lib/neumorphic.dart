@@ -14,31 +14,27 @@ class Neumorphic extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              NeumorphicContainer(
-                NeumorOption(
+              NeumorOption(
+                color: baseColor,
+                height: 64,
+                width: 64,
+                borderRadius: 64,
+                emboss: false,
+                gesture: true,
+              ).buildContainer(),
+              NeumorOption(
                   color: baseColor,
                   height: 64,
                   width: 64,
                   borderRadius: 64,
                   emboss: false,
                   gesture: true,
-                ),
-              ),
-              NeumorphicContainer(
-                NeumorOption(
-                    color: baseColor,
-                    height: 64,
-                    width: 64,
-                    borderRadius: 64,
-                    emboss: false,
-                    gesture: true,
-                    onTapDown: () {
-                      print('onTapDown');
-                    },
-                    onTapUp: () {
-                      print('onTapUp');
-                    }),
-              ),
+                  onTapDown: () {
+                    print('onTapDown');
+                  },
+                  onTapUp: () {
+                    print('onTapUp');
+                  }).buildContainer()
             ],
           ),
         ),

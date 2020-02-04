@@ -257,6 +257,10 @@ class NeumorOption {
     return option == null ? NeumorOption() : option;
   }
 
+  buildContainer() {
+    return NeumorphicContainer(this);
+  }
+
   @override
   String toString() {
     return '''{
