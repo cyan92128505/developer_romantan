@@ -2,10 +2,21 @@ import 'package:flutter/material.dart';
 
 import 'components/neumorphic.dart';
 
-class Neumorphic extends StatelessWidget {
-  Widget build(BuildContext context) {
-    Color baseColor = Color(0xFFF2F2F2);
+class Neumorphic extends StatefulWidget {
+  @override
+  _NeumorphicState createState() => _NeumorphicState();
+}
 
+class _NeumorphicState extends State<Neumorphic> {
+  Color baseColorDark = Color(0xFF555555);
+  Color baseColorLight = Color(0xFFF2F2F2);
+
+  bool toggleDarkMode = false;
+
+  Color get baseColor => toggleDarkMode ? baseColorDark : baseColorLight;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       color: baseColor,
       child: Center(
@@ -18,7 +29,7 @@ class Neumorphic extends StatelessWidget {
                 gesture: true,
                 borderRadius: 64,
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   child: Text(
                     'Hello World',
                     textDirection: TextDirection.ltr,
@@ -27,17 +38,19 @@ class Neumorphic extends StatelessWidget {
                 ),
               ).buildContainer(),
               NeumorOption(
-                  color: baseColor,
-                  height: 64,
-                  width: 64,
-                  borderRadius: 64,
-                  gesture: true,
-                  onTapDown: () {
-                    print('onTapDown');
-                  },
-                  onTapUp: () {
-                    print('onTapUp');
-                  }).buildContainer()
+                color: baseColor,
+                height: 64,
+                width: 64,
+                borderRadius: 64,
+                gesture: true,
+              ).buildContainer(),
+              NeumorOption(
+                color: baseColor,
+                child: SizedBox(
+                  height: 100,
+                  width: 100,
+                ),
+              ).buildContainer()
             ],
           ),
         ),
